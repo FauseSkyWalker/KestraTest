@@ -18,7 +18,7 @@ jobs:
       - name: Validate flows
         uses: kestra-io/validate-action@master       
         with:
-          directory: ./Kestra/flows
+          directory: ./kestra/flows
           resource: flow
           server: https://ecd2-45-230-85-67.ngrok-free.app
 
