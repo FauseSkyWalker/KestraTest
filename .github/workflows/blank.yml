@@ -15,12 +15,12 @@ jobs:
       - name: Checkout content
         uses: actions/checkout@v4
         
-      - name: Deploy flows
+      - name: Validate flows
         uses: kestra-io/validate-action@master       
         with:
-          namespace: company.team
           directory: ./kestra/flows
           resource: flow
           server: https://ecd2-45-230-85-67.ngrok-free.app
 
         
+
