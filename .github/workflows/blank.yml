@@ -20,13 +20,6 @@ jobs:
         with:
           directory: ./kestra/flows
           resource: flow
-          server: https://0b73-45-230-85-67.ngrok-free.app
+          server: https://ecd2-45-230-85-67.ngrok-free.app
 
-          
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        
