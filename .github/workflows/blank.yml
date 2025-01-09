@@ -20,7 +20,7 @@ jobs:
         with:
           directory: ./kestra/flows
           resource: flow
-          server: https://5019-45-184-68-200.ngrok-free.app
+          server: https://ecd2-45-230-85-67.ngrok-free.app
 
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           namespace: company.team
           directory: ./kestra/flows
           resource: flow
-          server: https://5019-45-184-68-200.ngrok-free.app
+          server: https://ecd2-45-230-85-67.ngrok-free.app
 
         
 
