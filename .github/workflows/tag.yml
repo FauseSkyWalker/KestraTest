@@ -1,0 +1,19 @@
+name: Criar Tag Automática
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  tag-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Criar e enviar nova tag
+        run: |
+          VERSION="v1.0.$(date +%s)"
+          git tag $VERSION
+          git push origin $VERSION
