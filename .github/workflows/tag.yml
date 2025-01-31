@@ -1,0 +1,30 @@
+name: Criar Tag Automática
+
+on:
+  push:
+    branches:
+      - release  # Só cria tag quando a branch release recebe um push
+
+permissions:
+  contents: write  # Permite que o bot faça push das tags
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar usuário do GitHub Actions
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Criar e enviar tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="v1.0.$(date +%s)"  # Gera um número de versão automático
+          git tag $VERSION
+          git push origin $VERSION
