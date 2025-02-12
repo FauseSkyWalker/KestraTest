@@ -1,16 +1,16 @@
-name: Trigger Kestra Workflow
+name: Trigger Kestra Workflow via ngrok
 
 on:
   push:
     branches:
-      - main  # Ou qualquer branch que deseja monitorar
+      - main  # Ou qualquer outra branch
 
 jobs:
   trigger_kestra:
     runs-on: ubuntu-latest
     steps:
-      - name: Chamar o workflow do Kestra
+      - name: Chamar o workflow do Kestra via ngrok
         run: |
-          curl -X POST "http://localhost:8080/api/v1/executions/trigger/default/hello-devops" \
+          curl -X POST "https://c4b9-45-230-85-179.ngrok-free.app/api/v1/executions/trigger/default/hello-devops" \
                -H "Content-Type: application/json" \
                -d '{"param": "value"}'
