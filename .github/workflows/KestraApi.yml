@@ -1,0 +1,15 @@
+name: Trigger Kestra Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  trigger-kestra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Kestra API
+        run: |
+          curl -X POST "http://localhost:8080/api/v1/executions/trigger/default/hello-devops" -F "param=value"
