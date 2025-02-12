@@ -1,0 +1,1 @@
+{"id":"hello-devops","namespace":"default","revision":1,"disabled":false,"deleted":false,"tasks":[{"id":"print-message","type":"io.kestra.plugin.scripts.shell.Script","taskRunner":{"type":"io.kestra.plugin.scripts.runner.docker.Docker"},"script":"echo \"Hello DevOps World\"\n"}]}

@@ -1,0 +1,7 @@
+id: hello-devops
+namespace: default
+tasks:
+  - id: print-message
+    type: "io.kestra.plugin.scripts.shell.Script"
+    script: |
+      echo "Hello DevOps World"
