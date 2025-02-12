@@ -3,21 +3,14 @@ name: Trigger Kestra Workflow
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  # Ou qualquer branch que deseja monitorar
 
 jobs:
-  trigger-kestra:
+  trigger_kestra:
     runs-on: ubuntu-latest
-    services:
-      kestra:
-        image: kestra/kestra:latest
-        ports:
-          - 8080:8080
     steps:
-      - name: Wait for Kestra to start
-        run: sleep 20  # Aguarde alguns segundos para o serviço subir
-
-      - name: Send request to Kestra API
+      - name: Chamar o workflow do Kestra
         run: |
-          curl -X POST "http://localhost:8080/api/v1/executions/trigger/default/hello-devops" -F "param=value"
+          curl -X POST "http://localhost:8080/api/v1/executions/trigger/default/hello-devops" \
+               -H "Content-Type: application/json" \
+               -d '{"param": "value"}'
