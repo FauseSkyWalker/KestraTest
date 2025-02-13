@@ -12,5 +12,4 @@ jobs:
       - name: Chamar o workflow do Kestra via ngrok
         run: |
           curl -X POST "https://7d6c-45-230-85-179.ngrok-free.app/api/v1/executions/trigger/default/hello-devops" -F "param=value"\
-               -H "Content-Type: application/json" \
-               -d '{"param": "value"}'
+
