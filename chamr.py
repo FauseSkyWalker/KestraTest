@@ -16,6 +16,9 @@ else:
     print(f"Erro: {response.status_code}, {response.text}")
 
 
-curl -X POST "http://localhost:8080/api/v1/executions/trigger/default/hello-devops" -F "param=value"
+#curl -X POST "http://localhost:8080/api/v1/executions/trigger/default/hello-devops" -F "param=value"
 
-curl -X GET "http://localhost:8080/api/v1/flows/default/hello-devops" -H "Content-Type: application/json"
+#curl -X GET "http://localhost:8080/api/v1/flows/default/hello-devops" -H "Content-Type: application/json"
+
+       #  curl -X POST "https://7d6c-45-230-85-179.ngrok-free.app/api/v1/executions/trigger/default/hello-devops" -F "param=value"
+               
