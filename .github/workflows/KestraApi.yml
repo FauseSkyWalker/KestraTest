@@ -3,7 +3,7 @@ name: Trigger Kestra Workflow via ngrok
 on:
   push:
     branches:
-      - main  # Ou qualquer outra branch que deseja monitorar
+      - main  
 
 jobs:
   trigger_kestra:
@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Chamar o workflow do Kestra via ngrok
         run: |
-          curl -X POST "https://7d6c-45-230-85-179.ngrok-free.app/api/v1/executions/trigger/default/hello-devops" -F "param=value"\
+          curl -X POST " https://ecb4-45-230-85-179.ngrok-free.app/api/v1/executions/trigger/default/hello-devops" -F "param=value"\
 
